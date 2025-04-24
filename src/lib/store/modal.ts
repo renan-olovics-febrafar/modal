@@ -1,12 +1,12 @@
 import { writable } from 'svelte/store';
-import type { Modal1 } from '$lib/components/Modals/Variables/modal1.svelte';
-import type { Modal2 } from '$lib/components/Modals/Variables/modal2.svelte';
+import type { Modal1 } from '$lib/components/Modals/Variables/Modal1.svelte';
+import type { Modal2 } from '$lib/components/Modals/Variables/Modal2.svelte';
 
-type Modal = Modal1 | Modal2;
+export type Modals = Modal1 | Modal2;
 
-export const modalArray = writable<Modal[]>([]);
+export const modalArray = writable<Modals[]>([]);
 
-export const createModal = (modal: Modal) => {
+export const createModal = (modal: Modals) => {
 	modalArray.update((modals) => [...modals, modal]);
 };
 
